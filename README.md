@@ -8,7 +8,7 @@ Proyecto realizado para el desafío **Hito 5 - Pizzería Mamma Mía**, continuan
 
 GitHub Actions compila el proyecto con Vite y publica el resultado en Pages al subir cambios a `main`. Las rutas publicadas comienzan con `/Hito5-router-reacts/`.
 
-Home y Pizza utilizan el backend del Hito 4 en `http://localhost:5000`. GitHub Pages publica el frontend, pero no ejecuta ese backend.
+Las pizzas y sus imágenes están guardadas en el proyecto. El sitio funciona en Pages sin instalar ni encender un backend.
 
 ## 📝 Descripción
 
@@ -20,7 +20,7 @@ Se conservan los estilos y componentes de los hitos anteriores, con comentarios 
 
 - Navegar con los enlaces del Navbar usando `Link`.
 - Abrir el carrito desde el botón del total.
-- Mostrar el listado de pizzas y el detalle de `p001` desde la API.
+- Mostrar el listado de pizzas y el detalle de `p001` desde el archivo local `src/data/pizzas.js`.
 - Conservar los formularios de registro e ingreso con sus validaciones.
 - Aumentar y disminuir cantidades en el carrito y calcular el total.
 - Mostrar el perfil con el correo `sandy@cadin.com` y un botón de cerrar sesión estático.
@@ -33,7 +33,6 @@ El total del menú es estático. Los botones Añadir, Pagar y Cerrar sesión no 
 - HTML5, CSS3 y JavaScript.
 - React y React Router.
 - Vite.
-- Fetch API para consultar el backend de apoyo.
 
 ## 📁 Estructura del proyecto
 
@@ -67,7 +66,7 @@ Hito5-router-reacts/
 
 ## ⚙️ Cómo funciona
 
-En `main.jsx`, `BrowserRouter` permite utilizar las rutas. En `App.jsx`, `Routes` y `Route` indican qué página mostrar según la dirección. El Navbar y el Footer se mantienen visibles.
+En `main.jsx`, `BrowserRouter` permite utilizar las rutas. En `App.jsx`, `Routes` y `Route` indican qué página mostrar según la dirección. El Navbar y el Footer se mantienen visibles. Home recorre el arreglo local de pizzas y Pizza busca el detalle de `P001` en ese mismo archivo.
 
 | Ruta | Página |
 | --- | --- |
@@ -95,15 +94,6 @@ Iniciar la aplicación:
 ```bash
 npm run dev
 ```
-
-Para cargar las pizzas, abrir otra terminal en la carpeta del backend de apoyo del Hito 4 y ejecutar:
-
-```bash
-npm install
-npm start
-```
-
-El backend debe funcionar en `http://localhost:5000`. Se mantiene por separado y no está incluido en este repositorio.
 
 Para compilar el frontend:
 
