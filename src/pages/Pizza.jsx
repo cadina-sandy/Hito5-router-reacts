@@ -1,7 +1,9 @@
 import { pizzas } from "../data/pizzas";
 
 function Pizza() {
-  // La ruta pide p001; en el archivo local su id está en mayúsculas.
+  // Antes consultábamos el detalle de p001 al backend del Hito 4.
+  // Ahora find busca esa pizza en los datos locales, sin fetch ni estados de carga.
+  // La ruta sigue siendo /pizza/p001; en pizzas.js el id está en mayúsculas.
   const pizza = pizzas.find((pizza) => pizza.id === "P001");
 
   if (!pizza) return <p>No se encontró la pizza.</p>;

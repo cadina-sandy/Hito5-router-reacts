@@ -3,7 +3,9 @@ import CardPizza from "../components/CardPizza";
 import { pizzas } from "../data/pizzas";
 
 function Home() {
-  // Usamos los datos locales para mostrar las pizzas sin un servidor.
+  // En el Hito 4 cargábamos las pizzas del backend con fetch y useEffect.
+  // Para este Hito 5 quitamos esa consulta y usamos el arreglo de pizzas.js.
+  // Así conservamos las tarjetas y el diseño, pero Pages funciona sin encender el backend.
   return (
     <section className="home">
       <Inicio />
