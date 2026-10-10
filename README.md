@@ -6,7 +6,7 @@ Proyecto realizado para el desafío **Hito 5 - Pizzería Mamma Mía**, continuan
 
 [Ver sitio web en GitHub Pages](https://cadina-sandy.github.io/Hito5-router-reacts/)
 
-El enlace de Pages está pendiente de quedar disponible: en la última revisión devolvió un error 404. Activar Pages requiere también configurar la publicación del proyecto compilado de Vite.
+GitHub Actions compila el proyecto con Vite y publica el resultado en Pages al subir cambios a `main`. Las rutas publicadas comienzan con `/Hito5-router-reacts/`.
 
 Home y Pizza utilizan el backend del Hito 4 en `http://localhost:5000`. GitHub Pages publica el frontend, pero no ejecuta ese backend.
 
