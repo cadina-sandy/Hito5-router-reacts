@@ -1,47 +1,124 @@
-# Hito 5 - Pizzería Mamma Mía
+# 🍕 Hito 5 de Pizzería Mamma Mía - React Router
 
-Continuación del Hito 4 para agregar navegación con React Router.
+Proyecto realizado para el desafío **Hito 5 - Pizzería Mamma Mía**, continuando el Hito 4 para agregar navegación entre páginas con React Router.
 
-## Ejecutar
+## 🚀 Deploy
 
-Desde esta carpeta:
+[Ver sitio web en GitHub Pages](https://cadina-sandy.github.io/Hito5-router-reacts/)
+
+El enlace de Pages está pendiente de quedar disponible: en la última revisión devolvió un error 404. Activar Pages requiere también configurar la publicación del proyecto compilado de Vite.
+
+Home y Pizza utilizan el backend del Hito 4 en `http://localhost:5000`. GitHub Pages publica el frontend, pero no ejecuta ese backend.
+
+## 📝 Descripción
+
+La aplicación permite navegar entre el inicio, registro, ingreso, carrito y perfil sin recargar la página. También incluye el detalle de una pizza y una página 404 para las direcciones que no existen.
+
+Se conservan los estilos y componentes de los hitos anteriores, con comentarios básicos en español para explicar los cambios.
+
+## ✨ Funcionalidades
+
+- Navegar con los enlaces del Navbar usando `Link`.
+- Abrir el carrito desde el botón del total.
+- Mostrar el listado de pizzas y el detalle de `p001` desde la API.
+- Conservar los formularios de registro e ingreso con sus validaciones.
+- Aumentar y disminuir cantidades en el carrito y calcular el total.
+- Mostrar el perfil con el correo `sandy@cadin.com` y un botón de cerrar sesión estático.
+- Mostrar una página 404 con una pizza hecha en CSS y un enlace para volver al inicio.
+
+El total del menú es estático. Los botones Añadir, Pagar y Cerrar sesión no realizan acciones todavía.
+
+## 🛠️ Tecnologías utilizadas
+
+- HTML5, CSS3 y JavaScript.
+- React y React Router.
+- Vite.
+- Fetch API para consultar el backend de apoyo.
+
+## 📁 Estructura del proyecto
+
+```text
+Hito5-router-reacts/
+├── public/images/pizza.jpg
+├── src/
+│   ├── components/
+│   │   ├── CardPizza.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Inicio.jsx
+│   │   └── Navbar.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Register.jsx
+│   │   ├── Login.jsx
+│   │   ├── Cart.jsx
+│   │   ├── Pizza.jsx
+│   │   ├── Profile.jsx
+│   │   └── NotFound.jsx
+│   ├── data/pizzas.js
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── styles.css
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
+```
+
+## ⚙️ Cómo funciona
+
+En `main.jsx`, `BrowserRouter` permite utilizar las rutas. En `App.jsx`, `Routes` y `Route` indican qué página mostrar según la dirección. El Navbar y el Footer se mantienen visibles.
+
+| Ruta | Página |
+| --- | --- |
+| `/` | Home: listado de pizzas |
+| `/register` | Register: formulario de registro |
+| `/login` | Login: formulario de ingreso |
+| `/cart` | Cart: carrito de compras |
+| `/pizza/p001` | Pizza: detalle de la pizza p001 |
+| `/profile` | Profile: perfil estático |
+| `/404` | NotFound: página no encontrada |
+| Cualquier otra ruta | NotFound |
+
+La ruta `/pizza/p001` se abre directamente desde la dirección del navegador; no se incluye en el Navbar, como permite la pauta.
+
+## 💻 Ejecutar el proyecto
+
+En la carpeta del proyecto, instalar las dependencias:
 
 ```bash
 npm install
+```
+
+Iniciar la aplicación:
+
+```bash
 npm run dev
 ```
 
-Home y Pizza conservan las consultas del Hito 4. Para ver las pizzas, también debe estar encendido el backend de apoyo en http://localhost:5000. En la carpeta del backend se ejecuta `npm install` y luego `npm start`.
+Para cargar las pizzas, abrir otra terminal en la carpeta del backend de apoyo del Hito 4 y ejecutar:
 
-## Rutas
+```bash
+npm install
+npm start
+```
 
-- `/`: Home, listado de pizzas.
-- `/register`: Register, formulario de registro.
-- `/login`: Login, formulario de ingreso.
-- `/cart`: Cart, carrito.
-- `/pizza/p001`: Pizza, detalle de p001.
-- `/profile`: Profile, correo de ejemplo y botón de cerrar sesión estáticos.
-- `/404`: NotFound, página de error con enlace al inicio.
-- Cualquier otra dirección también muestra NotFound.
+El backend debe funcionar en `http://localhost:5000`. Se mantiene por separado y no está incluido en este repositorio.
 
-Las páginas están en `src/pages`. El menú y el pie de página se mantienen en `src/components`. El menú usa Link y el total lleva a `/cart`. La ruta de pizza se puede abrir escribiendo `/pizza/p001` en el navegador; no se incluye en el menú, según la pauta.
-
-## Comentarios del trabajo
-
-- Se envolvió App con BrowserRouter para habilitar las rutas.
-- Se cambió el nombre Registro por Register para coincidir con la pauta.
-- Al mover Home a pages, se ajustaron sus importaciones de Inicio y CardPizza.
-- La configuración heredada tenía la base `/Hito4-APis-reacts/`. Se cambió a `/` para usar las direcciones del Hito 5.
-- El primer intento de instalación no pudo conectarse al registro de npm por una restricción de red del entorno.
-
-El perfil es estático. Se mantienen las funciones del carrito y los formularios anteriores; no se agregó autenticación ni pago. El total del menú conserva el valor estático del Hito 4.
-
-Para comprobar la compilación:
+Para compilar el frontend:
 
 ```bash
 npm run build
 ```
 
-## Revisión
+## ⬆️ Subida del proyecto
 
-La compilación terminó correctamente. Se revisaron las siete rutas, una dirección inexistente, el enlace de regreso al inicio, el enlace al carrito y sus cantidades. Home y Pizza cargaron los datos del backend. No aparecieron errores de JavaScript durante la prueba.
+El código está en la rama `main`. Las carpetas `node_modules` y `dist` se excluyen del repositorio.
+
+## 🔗 Repositorio
+
+[Ver repositorio en GitHub](https://github.com/cadina-sandy/Hito5-router-reacts)
+
+## 👩‍💻 Autora
+
+**Sandy Cadin**
